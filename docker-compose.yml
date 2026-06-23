@@ -1,1 +1,32 @@
 
+version: "3.9"
+
+services:
+  web:
+    build: .
+    container_name: guestbook_web
+    ports:
+      - "5000:5000"
+    environment:  # <-- add this
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - redis
+    networks:
+      - guestbook_network
+
+  redis:
+    image: redis:7-alpine
+    container_name: guestbook_redis
+    command: redis-server --appendonly yes  # <-- add this for persistence
+    volumes:
+      - redis_data:/data
+    networks:
+      - guestbook_network
+
+networks:
+  guestbook_network:
+    driver: bridge
+
+volumes:
+  redis_data:
