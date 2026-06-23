@@ -246,6 +246,36 @@ docker scout cves guest_book_app-web
 
 ### Sample Scout Output
 
+
+## Overview
+
+                   │                Analyzed Image                 
+───────────────────┼───────────────────────────────────────────────
+ Target            │  guest_book_app-web:latest                    
+   digest          │  14920340973a                                 
+   platform        │ linux/amd64                                   
+   provenance      │ https://github.com/highbee2810/Guest_book_app 
+                   │  0d00d9e34347d75eae6a4608f0af9f23545c2e3f     
+   vulnerabilities │    1C     3H     7M    26L     2?             
+   size            │ 53 MB                                         
+   packages        │ 149                                           
+                   │                                               
+ Base image        │  python:3.11-slim                             
+                   │  a01e48f10f90                                 
+
+
+## Packages and Vulnerabilities
+
+   1C     2H     2M     2L  perl 5.40.1-6
+pkg:deb/debian/perl@5.40.1-6?os_distro=trixie&os_name=debian&os_version=13
+
+39 vulnerabilities found in 12 packages
+  CRITICAL     1  
+  HIGH         3  
+  MEDIUM       7  
+  LOW          26 
+  UNSPECIFIED  2  
+
 ```
 
 
